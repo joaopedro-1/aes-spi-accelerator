@@ -81,37 +81,8 @@ Comunicação serial **síncrona**, **full-duplex** (dois shift registers em ane
 
 Proposta: **modo 0**, MSB primeiro. Quadro: `R/W (1b) | ENDEREÇO (7b) | DADO (32b)`.
 
-## 5. Arquitetura de topo (proposta)
-
-```
- Mestre SPI ──SCLK/CS_N/MOSI──▶ ┌───────────┐      ┌────────────────────┐
-            ◀──────MISO──────── │ SPI slave │◀────▶│ Banco de regs      │
-                                └───────────┘      │ CTRL STATUS KEY    │
-                                                   │ DIN  DOUT          │
-                                                   └───┬────────────▲───┘
-                                          chave/dado/  │            │ resultado/
-                                          start/modo   ▼            │ busy/done
-                                                   ┌────────────────┴───┐
-                                                   │ Núcleo AES         │
-                                                   │ FSM + datapath de  │
-                                                   │ rodada + key exp.  │
-                                                   └────────────────────┘
-```
-
-| Bloco | Função |
-|---|---|
-| SPI slave | Converte serial ↔ paralelo e gera acessos de leitura/escrita aos registradores |
-| Banco de registradores | Ponte entre SPI e AES. CTRL (START, MODO), STATUS (BUSY, DONE), KEY[0..3], DIN[0..3], DOUT[0..3] |
-| Núcleo AES | Arquitetura **iterativa** (uma rodada por ciclo, ~11 ciclos por bloco) com expansão de chave on-the-fly |
-
-**Operação típica:** escrever KEY → escrever DIN → escrever START em CTRL → aguardar DONE em STATUS (polling) → ler DOUT.
-
-**Pontos para a Semana 2:**
-- **CDC**: SCLK é assíncrono ao clock do sistema. As opções são sincronizar com 2 FFs (sobreamostragem) ou manter o shift register no domínio SCLK com handshake.
-- **Baixo consumo**: o núcleo AES é candidato a domínio desligável (power gating), com SPI e registradores sempre ligados.
-
-## 6. Problemas encontrados
+## 5. Problemas encontrados
 - Caminho com espaço/acento ("Área de trabalho") quebrava scripts internos do VCS. Solução: projeto movido para `~/projetos`.
 
-## 7. Próximos passos (Semana 2)
+## 6. Próximos passos (Semana 2)
 - Documento de arquitetura v1.0: modo SPI, formato de quadro, mapa de registradores, microarquitetura do AES, estratégia de CDC.
