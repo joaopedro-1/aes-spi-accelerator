@@ -1,0 +1,16 @@
+simv
+simv.daidir/
+lint_simv
+lint_simv.daidir/
+csrc/
+ucli.key
+*.vpd
+*.fsdb
+*.vcd
+AN.DB/
+verdiLog/
+novas*
+alib-*/
+work/
+*.svf
+command.log
