@@ -1,0 +1,39 @@
+                         Chronologic VCS (TM)
+       Version X-2025.06-SP2_Full64 -- Thu Oct 29 11:42:04 2026
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file 'rtl/minisoc_aes/minisoc_aes_inv_shift_rows.sv'
+Parsing design file 'rtl/minisoc_aes/minisoc_aes_sub_bytes.sv'
+Parsing design file 'rtl/minisoc_aes/minisoc_aes_inv_sbox.sv'
+Parsing design file 'rtl/minisoc_aes/minisoc_aes_shift_rows.sv'
+Parsing design file 'rtl/minisoc_aes/minisoc_aes_sbox.sv'
+Parsing design file 'rtl/minisoc_aes/minisoc_aes_inv_sub_bytes.sv'
+Parsing design file 'tb/tb_minisoc_aes_subbytes_shiftrows.sv'
+Top Level Modules:
+       tb_minisoc_aes_subbytes_shiftrows
+TimeScale is 1 ns / 1 ps
+Starting vcs inline pass...
+1 module and 0 UDP read.
+recompiling module tb_minisoc_aes_subbytes_shiftrows
+make[1]: Entering directory '/home/joao.silva/projetos/aes-spi-accelerator/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv_tb_minisoc_aes_subbytes_shiftrows ]; then chmod a-x ../simv_tb_minisoc_aes_subbytes_shiftrows; fi
+g++  -o ../simv_tb_minisoc_aes_subbytes_shiftrows      -rdynamic  -Wl,-rpath='$ORIGIN'/simv_tb_minisoc_aes_subbytes_shiftrows.daidir -Wl,-rpath=./simv_tb_minisoc_aes_subbytes_shiftrows.daidir -Wl,-rpath=/Tools/synopsys/vcs/X-2025.06-SP2/linux64/lib -L/Tools/synopsys/vcs/X-2025.06-SP2/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _2250473_archive_1.so _prev_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /Tools/synopsys/vcs/X-2025.06-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /Tools/synopsys/vcs/X-2025.06-SP2/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv_tb_minisoc_aes_subbytes_shiftrows up to date
+make[1]: Leaving directory '/home/joao.silva/projetos/aes-spi-accelerator/csrc'
+CPU time: .794 seconds to compile + .338 seconds to elab + .589 seconds to link

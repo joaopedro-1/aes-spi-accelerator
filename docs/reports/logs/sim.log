@@ -1,10 +1,10 @@
 Chronologic VCS simulator copyright 1991-2025
 Contains Synopsys proprietary information.
-Compiler version X-2025.06-SP2_Full64; Runtime version X-2025.06-SP2_Full64;  Oct 11 21:32 2026
+Compiler version X-2025.06-SP2_Full64; Runtime version X-2025.06-SP2_Full64;  Oct 29 09:55 2026
 TEST PASSED
 $finish called from file "tb/tb_add_round_key.sv", line 26.
 $finish at simulation time                40000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 40000 ps
-CPU Time:      0.370 seconds;       Data structure size:   0.0Mb
-Sun Oct 11 21:32:34 2026
+CPU Time:      0.390 seconds;       Data structure size:   0.0Mb
+Thu Oct 29 09:55:29 2026
