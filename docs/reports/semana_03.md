@@ -33,9 +33,8 @@ AddRoundKey é só XOR e serve para cifra e decifra.
 ## Resultados
 
 | Etapa | Ferramenta | Resultado |
-|---|---|---|
-| `make semana03` | VCS | |
-| lint | VCS `+lint=all` | |
+| `make semana03` | VCS X-2025.06-SP2 | TEST PASSED |
+| lint | VCS `+lint=all` | RTL sem avisos |
 | simulação | Verilator 5.020 | TEST PASSED |
 
 Logs em `docs/reports/logs/`.
