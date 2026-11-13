@@ -1,0 +1,10 @@
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP2_Full64; Runtime version X-2025.06-SP2_Full64;  Nov 13 09:33 2026
+TEST PASSED
+$finish called from file "tb/tb_minisoc_aes_key_exp.sv", line 69.
+$finish at simulation time               271000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 271000 ps
+CPU Time:      0.340 seconds;       Data structure size:   0.0Mb
+Fri Nov 13 09:33:44 2026

@@ -8,13 +8,19 @@ SHELL         := /bin/bash
 LOGS = docs/reports/logs
 
 # Cada testbench em tb/<nome>.sv, com a lista de RTL que ele usa
-TESTS = tb_add_round_key tb_minisoc_aes_subbytes_shiftrows
-SRCS_tb_add_round_key                  = rtl/add_round_key.sv
-SRCS_tb_minisoc_aes_subbytes_shiftrows = $(wildcard rtl/minisoc_aes/*.sv)
+AES_SRCS = $(wildcard rtl/minisoc_aes/*.sv)
+
+TESTS = tb_add_round_key tb_minisoc_aes_subbytes_shiftrows tb_minisoc_aes_round \
+        tb_minisoc_aes_key_exp tb_minisoc_aes_dp
+SRCS_tb_add_round_key                  = rtl/minisoc_aes/minisoc_aes_add_round_key.sv
+SRCS_tb_minisoc_aes_subbytes_shiftrows = $(AES_SRCS)
+SRCS_tb_minisoc_aes_round              = $(AES_SRCS)
+SRCS_tb_minisoc_aes_key_exp            = $(AES_SRCS)
+SRCS_tb_minisoc_aes_dp                 = $(AES_SRCS)
 
 VCS = vcs -full64 -sverilog -timescale=1ns/1ps
 
-.PHONY: all check-env lint sim semana02 clean
+.PHONY: all check-env lint sim semana02 semana03 semana04 clean
 all: lint sim
 
 check-env:
@@ -25,6 +31,8 @@ sim:  $(TESTS:%=sim-%)
 > @echo ">> FLUXO OK"
 
 semana02: lint-tb_minisoc_aes_subbytes_shiftrows sim-tb_minisoc_aes_subbytes_shiftrows
+semana03: lint-tb_minisoc_aes_round sim-tb_minisoc_aes_round
+semana04: lint-tb_minisoc_aes_key_exp sim-tb_minisoc_aes_key_exp lint-tb_minisoc_aes_dp sim-tb_minisoc_aes_dp
 
 lint-%: check-env
 > @test -n "$(SRCS_$*)" || { echo "ERRO: nenhum RTL mapeado para $*"; exit 1; }

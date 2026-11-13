@@ -4,8 +4,8 @@
 |---|---|---|---|
 | 1 | Kick-off, estudo e ambiente | Repositório, Makefile (lint/compilação/simulação), exemplo mínimo, estudo AES/SPI | Clone limpo + `make` sem erros ✅ |
 | 2 | Arquitetura | Diagrama de blocos, interfaces, modo SPI, mapa de registradores, estratégia de CDC, defesa | Arquitetura aprovada |
-| 3 | RTL AES I | SubBytes, ShiftRows, MixColumns, AddRoundKey + testes unitários | Bate com intermediários da FIPS-197; lint limpo |
-| 4 | RTL AES II | Expansão de chave, FSM de controle, núcleo completo + TB com vetores FIPS-197 | Todos os vetores passam |
+| 3 | Microarquitetura + RTL AES I | Doc. de microarquitetura, MixColumns, AddRoundKey e inversas + testes | Bate com intermediários da FIPS-197; lint limpo ✅ |
+| 4 | RTL AES II | Expansão de chave (`key_exp`) e datapath (`dp`) + TB com vetores FIPS-197 | Todos os vetores passam ✅ |
 | 5 | RTL SPI + registradores | SPI slave, banco de registradores, TB de leitura/escrita | R/W de todos os registradores via SPI |
 | 6 | Integração | Top-level, teste ponta a ponta, lint + CDC, tag `rtl-v1.0` | Operação completa via SPI |
 | 7 | Síntese (Design Compiler) | SDC, scripts DC, netlist, relatórios de área/timing/potência | Sem erros/latches; timing atendido |

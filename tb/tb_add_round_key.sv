@@ -3,7 +3,7 @@ module tb_add_round_key;
   logic [127:0] state_i, key_i, state_o;
   int errors = 0;
 
-  add_round_key dut (.state_i(state_i), .key_i(key_i), .state_o(state_o));
+  minisoc_aes_add_round_key dut (.state_i(state_i), .key_i(key_i), .state_o(state_o));
 
   task automatic check(input logic [127:0] s, input logic [127:0] k, input logic [127:0] exp);
     state_i = s; key_i = k;
