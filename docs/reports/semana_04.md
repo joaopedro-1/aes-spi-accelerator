@@ -52,8 +52,8 @@ Para ver se o TB pega erro, troquei 0x1b por 0x1d no `xtime` do MixColumns e o `
 
 | Etapa | Ferramenta | Resultado |
 |---|---|---|
-| `make semana04` | VCS | |
-| lint | VCS `+lint=all` | |
+| `make semana04` | VCS X-2025.06-SP2 | TEST PASSED nos dois TBs |
+| lint | VCS `+lint=all` | RTL sem avisos |
 | simulação | Verilator 5.020 | TEST PASSED nos dois TBs |
 
 ## Próxima semana
